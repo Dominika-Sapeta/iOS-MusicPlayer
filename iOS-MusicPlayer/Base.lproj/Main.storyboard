@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vMK-Rs-jez">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Page Controller-->
+        <scene sceneID="zBv-oG-iY2">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="MJh-WG-mOF" customClass="PageController" customModule="iOS_MusicPlayer" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XQl-0f-hzV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2137" y="123"/>
+        </scene>
+        <!--Player View Controller-->
+        <scene sceneID="Bpb-4e-LPw">
+            <objects>
+                <viewController storyboardIdentifier="Player" id="DT6-0b-VrY" customClass="PlayerViewController" customModule="iOS_MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kTv-fa-Voq"/>
+                        <viewControllerLayoutGuide type="bottom" id="QXT-tP-MGe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bz3-2G-sb3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdJ-Ag-6Ef">
+                                <rect key="frame" x="16" y="479" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                <state key="normal" title="PLAY">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="play:" destination="DT6-0b-VrY" eventType="touchUpInside" id="360-No-RDf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEO-iM-ArN">
+                                <rect key="frame" x="101" y="637" width="231" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <state key="normal" title="BACK TO COLLECTION">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToCol:" destination="DT6-0b-VrY" eventType="touchUpInside" id="ZA9-9b-xE4"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="52b-Mb-8hh">
+                                <rect key="frame" x="14" y="560" width="379" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="volumeChange:" destination="DT6-0b-VrY" eventType="valueChanged" id="IR4-eF-NYt"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="n18-ga-xxV">
+                                <rect key="frame" x="14" y="453" width="379" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="timeProgress:" destination="DT6-0b-VrY" eventType="valueChanged" id="ga1-WA-yfq"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJ8-EQ-hfs">
+                                <rect key="frame" x="0.0" y="355" width="375" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="artist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZ9-h7-Io9">
+                                <rect key="frame" x="0.0" y="384" width="375" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adjust volume level:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhU-Pc-B5I">
+                                <rect key="frame" x="16" y="531" width="212" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nS-PE-a8n">
+                                <rect key="frame" x="0.0" y="424" width="375" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bfk-ze-gVE">
+                                <rect key="frame" x="0.0" y="39" width="433" height="316"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaX-eo-KQg">
+                                <rect key="frame" x="303" y="479" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                <state key="normal" title="STOP">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stop:" destination="DT6-0b-VrY" eventType="touchUpInside" id="mhM-8C-EuY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="back" destination="DEO-iM-ArN" id="zcH-qK-zZX"/>
+                        <outlet property="eTime" destination="2nS-PE-a8n" id="ca7-bm-ViM"/>
+                        <outlet property="image" destination="bfk-ze-gVE" id="JGE-IF-TTa"/>
+                        <outlet property="play" destination="JdJ-Ag-6Ef" id="sBQ-y2-2Ki"/>
+                        <outlet property="songArtist" destination="VZ9-h7-Io9" id="mpy-I5-KWe"/>
+                        <outlet property="songTitle" destination="SJ8-EQ-hfs" id="YJS-8d-bkC"/>
+                        <outlet property="stop" destination="GaX-eo-KQg" id="xYd-Nf-UTp"/>
+                        <outlet property="time" destination="n18-ga-xxV" id="IhY-Mb-hWJ"/>
+                        <outlet property="volume" destination="52b-Mb-8hh" id="ZH3-H8-OM6"/>
+                        <outlet property="volumeLabel" destination="IhU-Pc-B5I" id="2Cu-We-0yn"/>
+                        <segue destination="wWB-Dr-pTc" kind="unwind" identifier="return" unwindAction="gridUnwindWithSegue:" id="FsI-kR-qdI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZOW-sK-NWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wWB-Dr-pTc" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2933.5999999999999" y="122.78860569715144"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tid-tM-8cJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vMK-Rs-jez" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="T14-xL-ydQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MBe-4Y-QyV" kind="relationship" relationship="rootViewController" id="lxw-Eg-0ru"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UNW-cp-6uu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142" y="123"/>
+        </scene>
+        <!--Music View Controller-->
+        <scene sceneID="wbK-VG-l00">
+            <objects>
+                <collectionViewController id="MBe-4Y-QyV" customClass="MusicViewController" customModule="iOS_MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="37w-Vb-KE8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="P2s-Th-314">
+                            <size key="itemSize" width="160" height="160"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="WLT-Y7-eMl" customClass="Cell" customModule="iOS_MusicPlayer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2W3-TY-brO">
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="2W3-TY-brO" firstAttribute="top" secondItem="WLT-Y7-eMl" secondAttribute="top" id="fTI-a1-9tH"/>
+                                    <constraint firstAttribute="trailing" secondItem="2W3-TY-brO" secondAttribute="trailing" id="fqu-Rz-ldR"/>
+                                    <constraint firstAttribute="bottom" secondItem="2W3-TY-brO" secondAttribute="bottom" id="sjv-lo-BrE"/>
+                                    <constraint firstItem="2W3-TY-brO" firstAttribute="leading" secondItem="WLT-Y7-eMl" secondAttribute="leading" id="t5g-Bf-t75"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="2W3-TY-brO" id="rUl-2p-5v0"/>
+                                    <segue destination="MJh-WG-mOF" kind="presentation" identifier="playMusic" id="910-cf-hFG"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="MBe-4Y-QyV" id="MHA-SB-dz2"/>
+                            <outlet property="delegate" destination="MBe-4Y-QyV" id="UhG-WU-JIp"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="0LW-QS-qWR"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tbv-jg-kfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1157.5999999999999" y="122.78860569715144"/>
+        </scene>
+    </scenes>
+</document>
